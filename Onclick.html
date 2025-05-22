@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <style>
+            @keyframes gradientBG {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                padding: 20px;
+                background: linear-gradient(-45deg, #ee7752, #e73c7e, #23d5ab, #23a6d5);
+                background-size: 400% 400%;
+                animation: gradientBG 15s ease infinite;
+            }
+            .card {
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                padding: 20px;
+                width: 150px;
+                text-align: center;
+                transition: transform 0.2s;
+            }
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+            button {
+                background-color: #007BFF;
+                border: none;
+                color: white;
+                padding: 10px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+            h1 {
+                font-size: 18px;
+                color: #333;
+                min-height: 24px;
+                margin: 0;
+            }
+        </style>
+        <script>
+            function hideAll() {
+                var infos = document.getElementsByClassName('day-info');
+                for (var i = 0; i < infos.length; i++) {
+                    infos[i].style.display = 'none';
+                }
+            }
+            function showDay(id, text) {
+                hideAll();
+                var info = document.getElementById(id);
+                info.style.display = 'block';
+                info.innerHTML = text;
+            }
+            function m(){
+                showDay('a', "Lord Shiva");
+            }
+            function t(){
+                showDay('b', "Bajarangbali");
+            }
+            function w(){
+                showDay('c', "Lord Ganesha");
+            }
+            function th(){
+                showDay('d', "Sai Baba");
+            }
+            function f(){
+                showDay('e', "Ammavaru");
+            }
+            function s(){
+                showDay('f', "Lord Venkateswara");
+            }
+            function su(){
+                showDay('g', "Non-Veg Day");
+            }
+        </script>
+    </head>
+    <body>
+        <div class="card">
+            <button onclick="m()">Monday</button>
+            <h1 id="a" class="day-info" style="display:none;"></h1>
+            <p>Monday is considered the start of the workweek in many cultures.</p>
+        </div>
+        <div class="card">
+            <button onclick="t()">Tuesday</button>
+            <h1 id="b" class="day-info" style="display:none;"></h1>
+            <p>Tuesday is named after the Norse god Tyr, associated with war and justice.</p>
+        </div>
+        <div class="card">
+            <button onclick="w()">Wednesday</button>
+            <h1 id="c" class="day-info" style="display:none;"></h1>
+            <p>Wednesday is named after Odin, the chief Norse god.</p>
+        </div>
+        <div class="card">
+            <button onclick="th()">Thursday</button>
+            <h1 id="d" class="day-info" style="display:none;"></h1>
+            <p>Thursday is named after Thor, the Norse god of thunder.</p>
+        </div>
+        <div class="card">
+            <button onclick="f()">Friday</button>
+            <h1 id="e" class="day-info" style="display:none;"></h1>
+            <p>Friday is named after Frigg, the Norse goddess of love and beauty.</p>
+        </div>
+        <div class="card">
+            <button onclick="s()">Saturday</button>
+            <h1 id="f" class="day-info" style="display:none;"></h1>
+            <p>Saturday is named after Saturn, the Roman god of agriculture.</p>
+        </div>
+        <div class="card">
+            <button onclick="su()">Sunday</button>
+            <h1 id="g" class="day-info" style="display:none;"></h1>
+            <p>Sunday is traditionally a day of rest and worship in many cultures.</p>
+        </div>
+    </body>
+</html>
