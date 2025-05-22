@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="number"], input[type="text"] {
+            width: 200px;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 8px 15px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Grade Calculator</h1>
+    <form id="gradeForm" onsubmit="return false;">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" required />
+
+        <label for="subject1">Subject 1 Marks:</label>
+        <input type="number" id="subject1" min="0" max="100" required />
+
+        <label for="subject2">Subject 2 Marks:</label>
+        <input type="number" id="subject2" min="0" max="100" required />
+
+        <label for="subject3">Subject 3 Marks:</label>
+        <input type="number" id="subject3" min="0" max="100" required />
+
+        <label for="subject4">Subject 4 Marks:</label>
+        <input type="number" id="subject4" min="0" max="100" required />
+
+        <label for="subject5">Subject 5 Marks:</label>
+        <input type="number" id="subject5" min="0" max="100" required />
+
+        <button onclick="calculateGrade()">Calculate Grade</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateGrade() {
+            const name = document.getElementById('studentName').value.trim();
+            const marks = [
+                Number(document.getElementById('subject1').value),
+                Number(document.getElementById('subject2').value),
+                Number(document.getElementById('subject3').value),
+                Number(document.getElementById('subject4').value),
+                Number(document.getElementById('subject5').value)
+            ];
+
+            if (!name) {
+                alert('Please enter the student name.');
+                return;
+            }
+
+            for (let i = 0; i < marks.length; i++) {
+                if (isNaN(marks[i]) || marks[i] < 0 || marks[i] > 100) {
+                    alert('Please enter valid marks between 0 and 100 for all subjects.');
+                    return;
+                }
+            }
+
+            const total = marks.reduce((acc, val) => acc + val, 0);
+            const avg = total / marks.length;
+
+            let resultMessage = `Student: ${name}<br>Average Marks: ${avg.toFixed(2)}<br>`;
+
+            if (avg >= 35) {
+                resultMessage += 'Result: Pass<br>';
+                if (avg >= 75 && avg <= 100) {
+                    resultMessage += 'Grade: A';
+                } else if (avg >= 45 && avg <= 74) {
+                    resultMessage += 'Grade: B';
+                } else if (avg >= 36 && avg <= 44) {
+                    resultMessage += 'Grade: C';
+                } else {
+                    resultMessage += 'Grade: Fail';
+                }
+            } else {
+                resultMessage += 'Result: Fail';
+            }
+
+            document.getElementById('result').innerHTML = resultMessage;
+        }
+    </script>
+</body>
+</html>
