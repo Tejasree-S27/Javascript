@@ -1,0 +1,41 @@
+<html>
+    <head>
+       <script>
+        function a(x)
+        {
+            var c=0;
+            for(var i=1;i<=x;i++)
+        {
+            if((x%i)==0)
+            {
+                c++;
+            }
+        }
+        if(c==2)
+        {
+            return 1;
+        
+        }else
+        {
+            return 0;
+        }
+    }
+    function b()
+    {
+        var y=parseInt(document.getElementById("r").value);
+        for (var i=0;i<y;i++)
+    {
+        if(a(i)==1)
+        {
+            document.writeln(i+" ");
+        }   
+    }
+    }
+       </script> 
+    </head>
+    <body>
+        Enter number to show the Output<input type="text" id="r">
+        <button onclick="b()">Run</button>
+        <p id="r"></p>
+    </body>
+</html> 
