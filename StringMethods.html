@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            function a(){
+                var v=document.getElementById("a").value;
+                document.write(v.toUpperCase(),"<br>");
+                document.write(v.toLowerCase(),"<br>");
+                document.write(v.includes("Sam"),"<br>");
+                document.write(v.indexOf("m"),"<br>");
+                document.write(v.replace("m","a"),"<br>");
+            }
+        </script>
+    </head>
+        <body>
+            <h1>Enter value to reverse</h1>
+            Enter a string: <input type="text" id="a">
+            <button onclick="a()">Click Here</button>
+        </body>
+</html>
