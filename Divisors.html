@@ -1,0 +1,21 @@
+<html>
+    <head>
+       <script>
+        function a(){
+            var x=document.getElementById("r").value;
+            document.write("Divisors are:-");
+            for(var i=0;i<x;i++)
+        {
+            if((x%i)==0){
+                document.writeln(i+" ");
+            }
+        }
+        }
+       </script> 
+    </head>
+    <body>
+        Enter number to show the Output<input type="text" id="r">
+        <button onclick="a()">Run</button>
+        <p id="r"></p>
+    </body>
+</html> 
