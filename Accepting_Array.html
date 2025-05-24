@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script>
+            function a(){
+              var s=document.getElementById("a").value;
+              var d=s.split(",");
+              document.getElementById("p").innerHTML=(d);
+              document.getElementById("p1").innerHTML=(JSON.stringify(d));
+        }
+        </script>
+    </head>
+    <body>
+        Enter Char<input type="text" id="a">
+        <h1 id="p"></h1>
+        <h1 id="p1"></h1>
+        <button onclick="a()">click Here</button>
+    </body>
+</html>
