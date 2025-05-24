@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            function a(){
+              var s=document.getElementById("a").value;
+              var d="";
+              for(var i=0;i<s.length;i++)
+              {
+                document.write(String.fromCharCode(s.charCodeAt(i)+1))
+              }
+        }
+        </script>
+    </head>
+    <body>
+        Enter Char<input type="text" id="a">
+        <h1 id="p"></h1>
+        <button onclick="a()">click Here</button>
+    </body>
+</html>
